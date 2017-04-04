@@ -5,7 +5,7 @@
 #ifndef GENERICDICTIONARY_DICTIONARY_H
 #define GENERICDICTIONARY_DICTIONARY_H
 
-
+template <typename X>
 class Dictionary {
 
 };

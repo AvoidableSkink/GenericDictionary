@@ -5,7 +5,7 @@
 #ifndef GENERICDICTIONARY_KEYVALUE_H
 #define GENERICDICTIONARY_KEYVALUE_H
 
-
+template <typename X>
 class KeyValue {
 
 };

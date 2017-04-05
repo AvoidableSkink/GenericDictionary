@@ -98,7 +98,31 @@ void DictionaryTester::testGetByIndex() {
 }
 
 void DictionaryTester::testGetByKey() {
+    std::cout << "DictionaryTester::testGetByKey" << std::endl;
 
+    Dictionary<std::string, std::string> myShows;
+    myShows.add("Hwarang", "Not Finished");
+    myShows.add("Strong Woman", "Still Airing");
+    myShows.add("City Hunter", "Completed -- many times");
+
+    KeyValue<std::string, std::string> myKeyVal0 = myShows.getByKey("Hwarang");
+    KeyValue<std::string, std::string> myKeyVal1 = myShows.getByKey("Strong Woman");
+    KeyValue<std::string, std::string> myKeyVal2 = myShows.getByKey("City Hunter");
+    if ((myKeyVal0.getKey() != "Hwarang") || (myKeyVal0.getValue() != "Not Finished"))
+    {
+        std::cout << "Failure in attempt to retrieve KeyValue. Hwarang, Not finished was expected"
+                  << myKeyVal0.getKey() << ", " << myKeyVal0.getValue() << "found instead." << std::endl;
+    }
+    if ((myKeyVal1.getKey() != "Strong Woman") || (myKeyVal1.getValue() != "Still Airing"))
+    {
+        std::cout << "Failure in attempt to retrieve KeyValue. Strong Woman, Still Airing was expected"
+                  << myKeyVal1.getKey() << ", " << myKeyVal1.getValue() << "found instead." << std::endl;
+    }
+    if ((myKeyVal2.getKey() != "City Hunter") || (myKeyVal2.getValue() != "Completed -- many times"))
+    {
+        std::cout << "Failure in attempt to retrieve KeyValue. City Hunter, Completed -- many times was expected"
+                  << myKeyVal2.getKey() << ", " << myKeyVal2.getValue() << "found instead." << std::endl;
+    }
 }
 
 void DictionaryTester::testRemoveByKey() {}

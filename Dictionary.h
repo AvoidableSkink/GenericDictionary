@@ -12,7 +12,6 @@
 template <typename X, typename Y>
 class Dictionary {
 private:
-    int count;
     std::vector<KeyValue<X,Y>> myKeyVals;
 
 public:

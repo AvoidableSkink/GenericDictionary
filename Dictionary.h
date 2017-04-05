@@ -82,17 +82,20 @@ KeyValue<X, Y> Dictionary<X,Y>::getByIndex(int index) {
     if (index < myKeyVals.size())
         return myKeyVals[index];
     else
-        throw std::out_of_range ("blah");
+        throw std::out_of_range ("Requested index is out of bounds.");
 }
 
 template <typename X, typename Y>
-void Dictionary<X,Y>::removeByKey(X key) {
+void Dictionary<X,Y>::removeByKey(X k) {
 
 }
 
 template <typename X, typename Y>
 void Dictionary<X,Y>::removeByIndex(int index) {
-
+    if (index < myKeyVals.size())
+        myKeyVals.erase(myKeyVals.begin() + index);
+    else
+        throw std::out_of_range ("Requested index is out of bounds.");
 }
 
 /**

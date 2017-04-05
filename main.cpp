@@ -14,7 +14,14 @@ int main() {
     KeyValue<std::string, std::string> myKeyVal2 = myShows.getByIndex(1);
     KeyValue<std::string, std::string> myKeyVal3 = myShows.getByIndex(2);
 
-    std::cout << "Series: " << myKeyVal1.getKey() << " Status: " << myKeyVal1.getValue() << std::endl;
-    std::cout << "Series: " << myKeyVal2.getKey() << " Status: " << myKeyVal2.getValue();
+    myShows.removeByIndex(3);
+
+    for (int i = 0; i < myShows.getCount(); ++i) {
+        KeyValue<std::string, std::string> myKeyVal2 = myShows.getByIndex(i);
+        std::cout << myKeyVal2.getKey() << std::endl;
+    }
+
+//    std::cout << "Series: " << myKeyVal1.getKey() << " Status: " << myKeyVal1.getValue() << std::endl;
+//    std::cout << "Series: " << myKeyVal2.getKey() << " Status: " << myKeyVal2.getValue();
 
 }

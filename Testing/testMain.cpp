@@ -8,4 +8,9 @@
 
 int main() {
     std::cout << "Testing time" << std::endl;
+
+    DictionaryTester dictionaryTester;
+    dictionaryTester.testSearch();
+
+    KeyValueTester keyValueTester;
 }

@@ -7,7 +7,13 @@
 
 
 class DictionaryTester {
-
+public:
+    void testAdd();
+    void testGetByKey();
+    void testGetByIndex();
+    void testRemoveByKey();
+    void testRemoveByIndex();
+    void testSearch();
 };
 
 

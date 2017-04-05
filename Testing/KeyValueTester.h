@@ -7,7 +7,10 @@
 
 
 class KeyValueTester {
-
+public:
+    void testKeyValueConstructor();
+    void testGetKey();
+    void testGetValue();
 };
 
 

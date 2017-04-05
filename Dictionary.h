@@ -78,7 +78,7 @@ KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) {
 
 template <typename X, typename Y>
 KeyValue<X, Y> Dictionary<X,Y>::getByIndex(int index) {
-    if (index < myKeyVals.size())
+    if (index < myKeyVals.size() && index >= 0)
         return myKeyVals[index];
     else
         throw std::out_of_range ("Requested index is out of bounds.");

@@ -7,10 +7,13 @@
 #include "KeyValueTester.h"
 
 int main() {
-    std::cout << "Testing time" << std::endl;
-
     DictionaryTester dictionaryTester;
     dictionaryTester.testSearch();
+    dictionaryTester.testAdd();
+    dictionaryTester.testGetByIndex();
+    dictionaryTester.testGetByKey();
+    dictionaryTester.testRemoveByIndex();
+    dictionaryTester.testRemoveByKey();
 
     KeyValueTester keyValueTester;
 }

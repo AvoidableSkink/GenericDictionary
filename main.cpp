@@ -14,7 +14,8 @@ int main() {
     KeyValue<std::string, std::string> myKeyVal2 = myShows.getByIndex(1);
     KeyValue<std::string, std::string> myKeyVal3 = myShows.getByIndex(2);
 
-    myShows.removeByIndex(3);
+    myShows.removeByIndex(2);
+    myShows.removeByKey("Hwarang");
 
     for (int i = 0; i < myShows.getCount(); ++i) {
         KeyValue<std::string, std::string> myKeyVal2 = myShows.getByIndex(i);

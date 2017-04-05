@@ -87,7 +87,13 @@ KeyValue<X, Y> Dictionary<X,Y>::getByIndex(int index) {
 
 template <typename X, typename Y>
 void Dictionary<X,Y>::removeByKey(X k) {
-
+    for (int i = 0; i < myKeyVals.size(); ++i) {
+        if (myKeyVals[i].getKey() == k)
+        {
+            myKeyVals.erase(myKeyVals.begin() + i);
+            break;
+        }
+    }
 }
 
 template <typename X, typename Y>

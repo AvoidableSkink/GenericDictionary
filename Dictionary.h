@@ -5,9 +5,25 @@
 #ifndef GENERICDICTIONARY_DICTIONARY_H
 #define GENERICDICTIONARY_DICTIONARY_H
 
-template <typename X>
-class Dictionary {
+#include "KeyValue.h"
 
+template <typename X, typename Y>
+class Dictionary {
+private:
+    int count;
+
+public:
+    Dictionary();
+    Dictionary(int size);
+    Dictionary(const Dictionary&);
+
+    void add(X key, Y value);
+    KeyValue<X, Y> getByKey(X key);
+    KeyValue<X, Y> getByIndex(int index);
+    void removeByKey(X key);
+    void removeByIndex(int index);
+
+    int getCount() const { return count; }
 };
 
 

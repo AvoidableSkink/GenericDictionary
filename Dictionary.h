@@ -32,13 +32,13 @@ public:
 
 const int DEFAULT_DICTIONARY_SIZE = 10;
 
-//set default size to default size lol
+//default constructor
 template <typename X, typename Y>
 Dictionary<X,Y>::Dictionary() {
     myKeyVals.reserve(DEFAULT_DICTIONARY_SIZE);
 }
 
-//set default size to the size parameter
+//parameterized constructor
 template <typename X, typename Y>
 Dictionary<X,Y>::Dictionary(int size) {
     myKeyVals.reserve(size);
@@ -46,8 +46,8 @@ Dictionary<X,Y>::Dictionary(int size) {
 
 //copy constructor
 template <typename X, typename Y>
-Dictionary<X,Y>::Dictionary(const Dictionary &) {
-
+Dictionary<X,Y>::Dictionary(const Dictionary & d) {
+    myKeyVals = d.myKeyVals;
 }
 
 /**
@@ -72,7 +72,6 @@ void Dictionary<X,Y>::add(X key, Y value) {
 template <typename X, typename Y>
 KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) {
     for (int i = 0; i < myKeyVals.size(); ++i) {
-        std::cout << myKeyVals[i].getKey() << std::endl;
         if (myKeyVals[i].getKey() == k)
             return myKeyVals[i];
     }

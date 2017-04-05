@@ -8,6 +8,8 @@ int main() {
     myShows.add("Strong Woman", "Still Airing");
     myShows.add("City Hunter", "Completed -- many times");
 
+    myShows.add("Strong Woman", "who even knows");
+
     KeyValue<std::string, std::string> myKeyVal = myShows.getByKey("Hwarang");
     std::cout << "Series: " << myKeyVal.getKey() << " Status: " << myKeyVal.getValue();
 }

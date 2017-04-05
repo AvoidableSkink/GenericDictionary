@@ -17,4 +17,7 @@ int main() {
     dictionaryTester.testSearch();
 
     KeyValueTester keyValueTester;
+    keyValueTester.testKeyValueConstructor();
+    keyValueTester.testGetKey();
+    keyValueTester.testGetValue();
 }

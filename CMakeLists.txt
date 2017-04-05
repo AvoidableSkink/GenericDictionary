@@ -7,7 +7,7 @@ set(SOURCE_FILES
         Dictionary.h
         KeyValue.h
 )
-add_executable(GenericDictionary main.cpp ${SOURCE_FILES} Testing/testMain.cpp)
+add_executable(GenericDictionary main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES
         Testing/DictionaryTester.cpp Testing/DictionaryTester.h

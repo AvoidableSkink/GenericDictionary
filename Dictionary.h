@@ -6,13 +6,13 @@
 #define GENERICDICTIONARY_DICTIONARY_H
 
 #include <vector>
+#include <iostream>
 #include "KeyValue.h"
 
 template <typename X, typename Y>
 class Dictionary {
 private:
     int count;
-
     std::vector<KeyValue<X,Y>> myKeyVals;
 
 public:
@@ -50,15 +50,32 @@ Dictionary<X,Y>::Dictionary(const Dictionary &) {
 
 }
 
+/**
+ * if the given key doesnt already exist
+ * create a KeyValue using the given parameters and add it to myKeyVals
+ */
 template <typename X, typename Y>
 void Dictionary<X,Y>::add(X key, Y value) {
-    KeyValue<X,Y> myVal(key, value);
-    myKeyVals.push_back(myVal);
+    if (!search(key)) {
+        KeyValue<X, Y> myVal(key, value);
+        myKeyVals.push_back(myVal);
+    }
+    else
+        std::cout << "Key already exists, no new Key added." << std::endl;
 }
 
+/**
+ * search myKeyVals for given key
+ * @param key used to search through the keyvalues
+ * @return return the KeyValue found at location of given key
+ */
 template <typename X, typename Y>
-KeyValue<X, Y> Dictionary<X,Y>::getByKey(X key) {
-
+KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) {
+    for (int i = 0; i < myKeyVals.size(); ++i) {
+        std::cout << myKeyVals[i].getKey() << std::endl;
+        if (myKeyVals[i].getKey() == k)
+            return myKeyVals[i];
+    }
 }
 
 template <typename X, typename Y>
@@ -86,7 +103,7 @@ void Dictionary<X,Y>::removeByIndex(int index) {
 template <typename X, typename Y>
 bool Dictionary<X,Y>::search(X k) {
     for (int i = 0; i < myKeyVals.size(); ++i) {
-        if (myKeyVals[i] == k)
+        if (myKeyVals[i].getKey() == k)
             return true;
     }
     return false;

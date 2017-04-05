@@ -19,5 +19,16 @@ public:
     Y getValue() const { return value; }
 };
 
+template <typename X, typename Y>
+KeyValue<X,Y>::KeyValue(X k, Y v) {
+    key = k;
+    value = v;
+}
+
+template <typename X, typename Y>
+KeyValue<X,Y>::KeyValue(const KeyValue & kv) {
+    key = kv.getKey();
+    value = kv.getValue();
+}
 
 #endif //GENERICDICTIONARY_KEYVALUE_H

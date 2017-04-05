@@ -142,9 +142,32 @@ void DictionaryTester::testRemoveByKey() {
 }
 
 void DictionaryTester::testRemoveByIndex() {
-//    myShows.removeByIndex(2);
-//    std::cout << "Series: " << myKeyVal1.getKey() << " Status: " << myKeyVal1.getValue() << std::endl;
-//    std::cout << "Series: " << myKeyVal2.getKey() << " Status: " << myKeyVal2.getValue();
+    std::cout << "DictionaryTester::testRemoveByIndex" << std::endl;
+
+    Dictionary<std::string, std::string> myShows;
+    myShows.add("Hwarang", "Not Finished");
+    myShows.add("Strong Woman", "Still Airing");
+    myShows.add("City Hunter", "Completed -- many times");
+    myShows.add("House", "Complete");
+    myShows.add("The Heirs", "Complete");
+
+    myShows.removeByIndex(0);
+    if (myShows.search("Hwarang") || myShows.getCount() != 4)
+    {
+        std::cout << "Failed to remove KeyValue with index 0" << std::endl;
+    }
+    myShows.removeByIndex(3);
+    if (myShows.search("The Heirs") || myShows.getCount() != 3)
+    {
+        std::cout << "Failed to remove KeyValue with index 3" << std::endl;
+    }
+    myShows.removeByIndex(1);
+    if (myShows.search("City Hunter") || myShows.getCount() != 2)
+    {
+        std::cout << "Failed to remove KeyValue with index 1" << std::endl;
+    }
+
+    //TODO: test for out of bounds index requests
 }
 
 void DictionaryTester::testSearch() {

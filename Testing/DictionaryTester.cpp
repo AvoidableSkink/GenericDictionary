@@ -84,17 +84,6 @@ void DictionaryTester::testGetByIndex() {
     {
         std::cout << "Failure: allowed access to an index out of bounds" << std::endl;
     }
-
-//    KeyValue<std::string, std::string> myKeyVal1 = myShows.getByKey("Hwarang");
-
-//    myShows.removeByIndex(2);
-//    myShows.removeByKey("Hwarang");
-
-
-
-//    std::cout << "Series: " << myKeyVal1.getKey() << " Status: " << myKeyVal1.getValue() << std::endl;
-//    std::cout << "Series: " << myKeyVal2.getKey() << " Status: " << myKeyVal2.getValue();
-
 }
 
 void DictionaryTester::testGetByKey() {
@@ -125,9 +114,38 @@ void DictionaryTester::testGetByKey() {
     }
 }
 
-void DictionaryTester::testRemoveByKey() {}
+void DictionaryTester::testRemoveByKey() {
+    std::cout << "DictionaryTester::testRemoveByKey" << std::endl;
 
-void DictionaryTester::testRemoveByIndex() {}
+    Dictionary<std::string, std::string> myShows;
+    myShows.add("Hwarang", "Not Finished");
+    myShows.add("Strong Woman", "Still Airing");
+    myShows.add("City Hunter", "Completed -- many times");
+    myShows.add("House", "Complete");
+    myShows.add("The Heirs", "Complete");
+
+    myShows.removeByKey("Hwarang");
+    if (myShows.search("Hwarang") || myShows.getCount() != 4)
+    {
+        std::cout << "Failed to remove KeyValue with key 'Hwarang'" << std::endl;
+    }
+    myShows.removeByKey("The Heirs");
+    if (myShows.search("The Heirs") || myShows.getCount() != 3)
+    {
+        std::cout << "Failed to remove KeyValue with key 'The Heirs'" << std::endl;
+    }
+    myShows.removeByKey("City Hunter");
+    if (myShows.search("City Hunter") || myShows.getCount() != 2)
+    {
+        std::cout << "Failed to remove KeyValue with key 'City Hunter'" << std::endl;
+    }
+}
+
+void DictionaryTester::testRemoveByIndex() {
+//    myShows.removeByIndex(2);
+//    std::cout << "Series: " << myKeyVal1.getKey() << " Status: " << myKeyVal1.getValue() << std::endl;
+//    std::cout << "Series: " << myKeyVal2.getKey() << " Status: " << myKeyVal2.getValue();
+}
 
 void DictionaryTester::testSearch() {
 

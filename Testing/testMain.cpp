@@ -8,12 +8,13 @@
 
 int main() {
     DictionaryTester dictionaryTester;
-    dictionaryTester.testSearch();
+    dictionaryTester.testConstructors();
     dictionaryTester.testAdd();
-    dictionaryTester.testGetByIndex();
     dictionaryTester.testGetByKey();
-    dictionaryTester.testRemoveByIndex();
+    dictionaryTester.testGetByIndex();
     dictionaryTester.testRemoveByKey();
+    dictionaryTester.testRemoveByIndex();
+    dictionaryTester.testSearch();
 
     KeyValueTester keyValueTester;
 }

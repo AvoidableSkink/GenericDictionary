@@ -8,6 +8,7 @@
 
 class DictionaryTester {
 public:
+    void testConstructors();
     void testAdd();
     void testGetByKey();
     void testGetByIndex();

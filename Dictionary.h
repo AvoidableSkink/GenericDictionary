@@ -26,6 +26,7 @@ public:
     void removeByIndex(int index);
     bool search(X k);
 
+    int getCurrentCapacity() const { return myKeyVals.capacity(); }
     int getCount() const { return myKeyVals.size(); }
 };
 
@@ -60,7 +61,7 @@ void Dictionary<X,Y>::add(X key, Y value) {
         myKeyVals.push_back(myVal);
     }
     else
-        std::cout << "Key already exists, no new Key added." << std::endl;
+        throw std::invalid_argument ("Cannot create duplicate Keys");
 }
 
 /**

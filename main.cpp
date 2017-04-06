@@ -6,7 +6,7 @@ int main() {
 
     Dictionary<std::string, std::string> myShows;
     myShows.add("Hwarang", "Not Finished");
-    myShows.add("Strong Woman", "Still Airing");
+    myShows.add("Strong Woman", "Still on air");
     myShows.add("City Hunter", "Completed -- many times");
     myShows.add("House", "Complete");
     myShows.add("The Heirs", "Complete");

@@ -20,11 +20,11 @@ public:
     Dictionary(const Dictionary&);
 
     void add(X key, Y value);
-    KeyValue<X, Y> getByKey(X key);
-    KeyValue<X, Y> getByIndex(int index);
+    KeyValue<X, Y> getByKey(X key) const;
+    KeyValue<X, Y> getByIndex(int index) const;
     void removeByKey(X key);
     void removeByIndex(int index);
-    bool search(X k);
+    bool search(X k) const;
 
     int getCurrentCapacity() const { return myKeyVals.capacity(); }
     int getCount() const { return myKeyVals.size(); }
@@ -70,7 +70,7 @@ void Dictionary<X,Y>::add(X key, Y value) {
  * @return return the KeyValue found at location of given key
  */
 template <typename X, typename Y>
-KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) {
+KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) const{
     for (int i = 0; i < myKeyVals.size(); ++i) {
         if (myKeyVals[i].getKey() == k)
             return myKeyVals[i];
@@ -78,7 +78,7 @@ KeyValue<X, Y> Dictionary<X,Y>::getByKey(X k) {
 }
 
 template <typename X, typename Y>
-KeyValue<X, Y> Dictionary<X,Y>::getByIndex(int index) {
+KeyValue<X, Y> Dictionary<X,Y>::getByIndex(int index) const{
     if (index < myKeyVals.size() && index >= 0)
         return myKeyVals[index];
     else
@@ -112,7 +112,7 @@ void Dictionary<X,Y>::removeByIndex(int index) {
  * @return true if key is found, false if not found
  */
 template <typename X, typename Y>
-bool Dictionary<X,Y>::search(X k) {
+bool Dictionary<X,Y>::search(X k) const {
     for (int i = 0; i < myKeyVals.size(); ++i) {
         if (myKeyVals[i].getKey() == k)
             return true;
